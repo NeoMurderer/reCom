@@ -1,0 +1,50 @@
+angular.module 'recom'
+.config [
+  '$urlRouterProvider', '$stateProvider'
+  ($urlRouterProvider, $stateProvider) ->
+    $urlRouterProvider.otherwise '/'
+
+    $stateProvider
+    .state 'login',
+      url: '/login'
+      controller: 'LoginController'
+      templateUrl: "<%= asset_path('templates/login.html') %>"
+    .state 'app',
+      abstract: true
+      controller: 'ApplicationController'
+      templateUrl: "<%= asset_path('templates/layout.html') %>"
+    .state 'app.songs',
+      url: '/'
+      controller: 'SongsController'
+      templateUrl: "<%= asset_path('templates/songs.html') %>"
+    .state 'app.friends',
+      url: '/friends'
+      controller: 'FriendsController'
+      templateUrl: "<%= asset_path('templates/friends.html') %>"
+    .state 'app.friend',
+      url: '/friends/:friendId'
+      controller: 'FriendSongsController'
+      templateUrl: "<%= asset_path('templates/songs.html') %>"
+    .state 'app.groups',
+      url: '/groups'
+      controller: 'GroupsController'
+      templateUrl: "<%= asset_path('templates/groups.html') %>"
+    .state 'app.group',
+      url: '/groups/:groupId'
+      controller: 'GroupSongsController'
+      templateUrl: "<%= asset_path('templates/songs.html') %>"
+
+]
+.run [
+  '$rootScope', '$auth', '$state'
+  ($rootScope, $auth, $state) ->
+    $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
+      if $auth.isAuthenticated()
+        if toState.name == 'login'
+          event.preventDefault()
+          $state.go 'songs'
+      else
+        if toState.name != 'login'
+          event.preventDefault()
+          $state.go 'login'
+]

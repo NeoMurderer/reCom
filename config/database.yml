@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: recom_development
+
+test:
+  <<: *default
+  database: recom_test
+
+# DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>

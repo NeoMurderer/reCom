@@ -1,0 +1,24 @@
+angular.module 'recom'
+.config [
+  '$authProvider'
+  ($authProvider) ->
+    $authProvider.baseUrl = '/'
+    $authProvider.tokenName = 'token'
+    $authProvider.tokenPrefix = 'recom'
+    $authProvider.authHeader = 'Authorization'
+    $authProvider.authToken = 'Bearer'
+    $authProvider.storageType = 'localStorage'
+
+    $authProvider.oauth2
+      name: 'vkontakte'
+      url: '/session'
+      clientId: '<%= Rails.application.secrets.vkontakte_client_id %>'
+      redirectUri: window.location.origin
+      authorizationEndpoint: 'https://oauth.vk.com/authorize'
+      requiredUrlParams: ['display', 'scope']
+      scope: ['audio', 'friends', 'offline']
+      scopeDelimiter: ','
+      display: 'popup'
+      type: '2.0'
+      popupOptions: { width: 580, height: 400 }
+]

@@ -1,0 +1,16 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th style="width: 50px;">Photo</th>
+      <th>Friends</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="friend in friends" ng-click="openFriend(friend)">
+      <td>
+        <img ng-src="{{ friend.photo_50 }}" class="img-circle"/>
+      </td>
+      <td>{{ friend.first_name + ' ' + friend.last_name }}</td>
+    </tr>
+  </tbody>
+</table>
