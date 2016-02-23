@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resource :session
   resources :songs, only: [:index]
   resources :friends, only: [:index]
+  resources :groups, only: [:index]
 end

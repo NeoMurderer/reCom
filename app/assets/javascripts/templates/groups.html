@@ -6,7 +6,10 @@
   </thead>
   <tbody>
     <tr ng-repeat="group in groups" ng-click="openGroup(group)">
-      <td>{{ group }}</td>
+      <td>
+        <img ng-src="{{ group.photo_50 }}" class="img-circle"/>
+      </td>
+      <td>{{ group.name}}</td>
     </tr>
   </tbody>
 </table>

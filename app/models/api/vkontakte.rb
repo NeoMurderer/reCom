@@ -24,6 +24,10 @@ module API
           'owner_id' => q
           })
       end
+
+      Rails.logger.debug "==================="
+      Rails.logger.debug query
+      Rails.logger.debug "==================="
       response = self.class.get('/method/audio.get', query: query).parsed_response
       response['response']['items']
     end
@@ -36,6 +40,17 @@ module API
         'fields' => 'photo_50,first_name,last_name'
       }
       response = self.class.get('/method/friends.get', query: query).parsed_response
+      response['response']['items']
+    end
+
+    def get_groups(token)
+      query = {
+        'v' => '5.45',
+        'extended' => true,
+        'access_token' => token,
+        'order' => 'name'
+      }
+      response = self.class.get('/method/groups.get', query: query).parsed_response
       response['response']['items']
     end
   end
