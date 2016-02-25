@@ -4,6 +4,8 @@
 # = require angular-ui-router/release/angular-ui-router
 # = require angular-resource/angular-resource
 # = require angular-soundmanager3/dist/angular-soundmanager3
+# = require ngCable/src/ngCable
+# = require ngCable/src/action-cable
 # = require satellizer/satellizer
 # = require_self
 # = require_tree ./app
@@ -13,4 +15,5 @@ angular.module 'recom', [
   'satellizer'
   'ngResource'
   'angularSoundManager'
+  'ngCable'
 ]

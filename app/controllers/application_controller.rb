@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    User.first
+    token = request.headers.fetch(:authorization,nil).try(:split," ").try(:last)
+    AuthenticationService.user(token)
   end
 end

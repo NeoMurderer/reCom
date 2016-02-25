@@ -16,4 +16,10 @@ class AuthenticationService
     payload = { iss: user.id }
     JWT.encode payload, Rails.application.secrets.secret_key_base, 'HS256'
   end
+
+  def self.user(token)
+    return nil unless token
+    payload = JWT.decode(token, Rails.application.secrets.secret_key_base, { :algorithm => 'HS256' }).first
+    User.find(payload['iss'])
+  end
 end
