@@ -41,6 +41,7 @@
   padding: 0 20px;
   color: $white;
   font-size: 0;
+  min-width: 300px;
   white-space: nowrap;
   &:after {
     @extend %header-divider;
@@ -116,6 +117,7 @@
   padding: 0 20px;
   white-space: nowrap;
   font-size: 12px;
+    min-width: 260px;
   &:before {
     @extend %header-divider;
     right: auto;
