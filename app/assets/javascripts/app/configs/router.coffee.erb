@@ -11,8 +11,16 @@ angular.module 'recom'
       templateUrl: "<%= asset_path('templates/login.html') %>"
     .state 'app',
       abstract: true
-      controller: 'ApplicationController'
-      templateUrl: "<%= asset_path('templates/layout.html') %>"
+      views: {
+        'main' : {
+          controller: 'ApplicationController'
+          templateUrl: "<%= asset_path('templates/layout.html') %>"
+        }
+        "player": {
+          controller: 'PlayerController'
+          templateUrl: "<%= asset_path('templates/player.html') %>"
+         }
+      }
     .state 'app.songs',
       url: '/'
       controller: 'SongsController'

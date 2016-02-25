@@ -1,5 +1,14 @@
-<audio controls preload="false" ng-src="{{ current_song.url | trusted }}"></audio>
+<div class="row">
 
+  <div class="col-lg-12">
+    <div class="input-group">
+      <input type="text" class="form-control" ng-model="query" ng-change="loadTrack()" placeholder="Search track...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="resetSearch()">Reset</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
 <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -12,7 +21,7 @@
   <tbody>
     <tr ng-repeat="song in songs" ng-class="song == current_song ? 'info' : ''">
       <td>
-        <button class="btn btn-primary btn-xs" type="button" ng-click="play(song)">
+        <button class="btn btn-primary btn-xs" type="button" play-all="songs">
           <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
         </button>
       </td>

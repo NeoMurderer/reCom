@@ -1,0 +1,35 @@
+{
+  "name": "angular-soundmanager3",
+  "version": "0.5.7",
+  "authors": [
+    "Parminder Klair"
+  ],
+  "description": "SoundManager3 Music Player for AngularJs",
+  "main": "dist/angular-soundmanager3.js",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "soundmanager3",
+    "music",
+    "player",
+    "music player"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/NeoMurderer/angular-soundmanager3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.5.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.7",
+    "commit": "ae85a08d39553efe3dd38ac697be8f6867307ce1"
+  },
+  "_source": "git://github.com/NeoMurderer/angular-soundmanager3.git",
+  "_target": "*",
+  "_originalSource": "angular-soundmanager3"
+}

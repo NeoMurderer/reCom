@@ -1,0 +1,36 @@
+{
+    "name": "angular-soundmanager3",
+    "version": "0.5.7",
+    "description": "SoundManager3 Music Player for AngularJs",
+    "main": "src/angular-soundmanager3.js",
+    "directories": {
+        "example": "example",
+        "dist": "dist",
+        "src": "src"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:NeoMurderer/angular-soundmanager3.git"
+    },
+    "keywords": [
+        "angular",
+        "angularjs",
+        "soundmanager3",
+        "music",
+        "player",
+        "music player"
+    ],
+    "author": "Parminder Klair",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/NeoMurderer/angular-soundmanager3/issues"
+    },
+    "homepage": "https://github.com/NeoMurderer/angular-soundmanager3",
+    "devDependencies": {
+       "grunt": "~0.4.5",
+       "grunt-contrib-jshint":  "~0.10.0",
+       "grunt-contrib-concat":  "~0.5.0",
+       "grunt-contrib-uglify":  "~0.7.0",
+       "grunt-contrib-watch":   "~0.6.1"
+    }
+}

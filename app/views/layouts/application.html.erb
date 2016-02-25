@@ -10,6 +10,12 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <div ui-view></div>
+    <sound-manager></sound-manager>
+    <div ui-view="main"></div>
+
+    <div class="player"  ui-view="player">
+
+    </div>
+
   </body>
 </html>

@@ -24,10 +24,6 @@ module API
           'owner_id' => q
           })
       end
-
-      Rails.logger.debug "==================="
-      Rails.logger.debug query
-      Rails.logger.debug "==================="
       response = self.class.get('/method/audio.get', query: query).parsed_response
       response['response']['items']
     end

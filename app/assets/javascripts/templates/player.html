@@ -1,0 +1,36 @@
+<!-- 
+<div class="song-image">
+  <img alt="" ng-src="{{currentPlaying.photo50}}"/>
+</div> -->
+<div class="song-title">
+  <div class="song-artist">
+    {{currentPlaying.artist}}
+  </div>
+  <div class="song-name">
+    {{ currentPlaying.title }}
+  </div>
+</div>
+<div class="player-controls">
+  <button class="btn" play-music>
+    <span aria-hidden="true" class="glyphicon glyphicon-play"></span>
+  </button>
+  <button class="btn" pause-music>
+    <span aria-hidden="true" class="glyphicon glyphicon-pause"></span>
+  </button>
+  <button class="btn" stop-music>
+    <span aria-hidden="true" class="glyphicon glyphicon-stop"></span>
+  </button>
+  <button class="btn" prev-track>
+    <span aria-hidden="true" class="glyphicon glyphicon-step-backward"></span>
+  </button>
+  <button class="btn" next-track>
+    <span aria-hidden="true" class="glyphicon glyphicon-step-forward"></span>
+  </button>
+  <button class="btn" repeat-music>
+    <span aria-hidden="true" class="glyphicon glyphicon-repeat"></span>
+
+  </button>
+</div>
+<div class="seekBase" seek-track>
+  <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+</div>

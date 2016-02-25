@@ -3,13 +3,13 @@ angular.module 'recom'
   '$scope', 'Song'
   ($scope, Song) ->
     $scope.current_song = {}
+    $scope.loadTrack = () ->
+      Song.query({name:$scope.query}).$promise
+      .then (songs) ->
+        $scope.songs = songs
+      .catch (response) ->
+        console.log 'FAILURE'
 
-    Song.query().$promise
-    .then (songs) ->
-      $scope.songs = songs
-    .catch (response) ->
-      console.log 'FAILURE'
-
-    $scope.play = (song) ->
-      $scope.current_song = song
+    $scope.resetSearch = () ->
+      $scope.query = null
 ]

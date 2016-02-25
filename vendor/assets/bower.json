@@ -5,6 +5,7 @@
     "angular": "latest",
     "angular-resource": "latest",
     "angular-ui-router": "latest",
-    "satellizer": "latest"
+    "satellizer": "latest",
+    "angular-soundmanager3": "latest"
   }
 }
