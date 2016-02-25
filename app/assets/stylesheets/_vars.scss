@@ -1,0 +1,55 @@
+// Font Families
+//**********************************************//
+$ffExo2: 'Exo 2', sans-serif;
+$ffOpenSans: 'Open Sans', sans-serif;
+
+// Base Colors
+//**********************************************//
+$white: #ffffff;
+$black: #000000;
+
+
+// Text Colors
+//**********************************************//
+$textBase: #464A54;
+$textVolumeControl: #eeeeee;
+$textVolumeActive: #0066B5;
+$textSearchIcon: #313B44;
+$textPlaybackTime: #9CA4B7;
+$textPlaybackSong: #E8E8E8;
+$textLibraryListTitle: #9BA4AB;
+$textLibraryList: #a2adba;
+/* $textPlaylistTitle: #9BA4AB; */
+$textPlaylistTitle: #fff;
+
+/* $textPlaylistList: #adb6bd; */
+$textPlaylistList: #fff;
+
+$textLibraryModal: #666666;
+$textLibraryModalTitle: #ffffff;
+
+// Background Colors
+//**********************************************//
+$bgBody: aqua;
+$bgHeaderControls: #E14747;
+$bgHeaderPlayback: #414A59;
+$bgHeaderPlaybackProgress: lighten($bgHeaderPlayback, 20%);
+$bgVolumeControl: #B64645;
+$bgPlaybackControl: #B64645;
+$bgPlaybackControlActive: darken($bgPlaybackControl, 10%);
+$bgLibrary: #333A46;
+$bgLibraryList: #454b54;
+$bgLibraryListHover: #393e47;
+$bgPlaylist: #333A46;
+$bgPlaylistListHover: #4689FA;
+$bgLibraryModal: #FFFFFF;
+$bgLibraryModalTitle: #414A59;
+
+// Border Colors
+//**********************************************//
+$borderPlaybackControls: #989898;
+$borderLibrary: #2b2c39;
+$borderLibraryList: #595f68;
+$borderPlaylist: #2b2c39;
+$borderPlaylistList: #424955;
+$borderPlaylistListHover: #3A7FEE;

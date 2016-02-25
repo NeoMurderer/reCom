@@ -6,6 +6,7 @@
     "angular-resource": "latest",
     "angular-ui-router": "latest",
     "satellizer": "latest",
-    "angular-soundmanager3": "latest"
+    "angular-soundmanager3": "latest",
+    "font-awesome": "latest"
   }
 }

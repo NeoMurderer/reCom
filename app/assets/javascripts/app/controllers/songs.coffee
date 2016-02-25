@@ -9,7 +9,8 @@ angular.module 'recom'
         $scope.songs = songs
       .catch (response) ->
         console.log 'FAILURE'
-
     $scope.resetSearch = () ->
       $scope.query = null
+      $scope.loadTrack()
+    $scope.loadTrack()
 ]

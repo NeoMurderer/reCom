@@ -27,6 +27,19 @@ module API
       response = self.class.get('/method/audio.get', query: query).parsed_response
       response['response']['items']
     end
+    def find_songs(token, q = nil)
+      query = {
+        'v' => '5.45',
+        'access_token' => token
+      }
+      if q
+        query.merge!({
+          'q' => q
+          })
+      end
+      response = self.class.get('/method/audio.search', query: query).parsed_response
+      response['response']['items']
+    end
 
     def get_friends(token)
       query = {

@@ -1,8 +1,12 @@
+/*
+ *= require font-awesome
+ */
 $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "variables";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
 @import "bootswatch";
+@import "player";
 body {
   background: #e5e5e5;
 }
@@ -14,16 +18,13 @@ body {
   position: fixed;
   width:100%;
   left:0;
+  z-index: 10;
   right:0;
   bottom: 0;
-  height: 90px;
   background: #fff;
   display: inline-block;
   vertical-align: middle;
-  .song-title {
-    float:left;
-    width:200px;
-  }
-  .player-controls {
-  }
+}
+.full-player {
+  top:0;
 }

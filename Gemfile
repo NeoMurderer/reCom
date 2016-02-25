@@ -13,7 +13,7 @@ gem 'puma'
 gem 'redis'
 gem 'sass-rails'
 gem 'uglifier'
-
+gem 'font-awesome-rails'
 group :development, :test do
   gem 'byebug'
   gem 'debbie'
