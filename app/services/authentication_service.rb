@@ -4,7 +4,9 @@ class AuthenticationService
     client_id = params.fetch('clientId')
     redirect_uri = params.fetch('redirectUri')
     vk_response = API::Vkontakte.new.get_token(code, redirect_uri)
-
+    Rails.logger.debug "============="
+    Rails.logger.debug vk_response
+    Rails.logger.debug "============="
     user = User.find_by_vkontakte_id vk_response['user_id']
 
     if user

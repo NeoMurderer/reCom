@@ -7,8 +7,12 @@ angular.module 'recom'
     $stateProvider
     .state 'login',
       url: '/login'
-      controller: 'LoginController'
-      templateUrl: "<%= asset_path('templates/login.html') %>"
+      views: {
+        'main' : {
+          controller: 'LoginController'
+          templateUrl: "<%= asset_path('templates/login.html') %>"
+        }
+      }
     .state 'app',
       abstract: true
       # url: '/'
