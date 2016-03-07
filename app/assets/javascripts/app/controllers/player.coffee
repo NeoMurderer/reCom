@@ -5,7 +5,4 @@ angular.module 'recom'
     $rootScope.showPlaylist = false;
     $scope.togglePlaylist = () ->
       $rootScope.showPlaylist = !$rootScope.showPlaylist
-
-
-
 ]
