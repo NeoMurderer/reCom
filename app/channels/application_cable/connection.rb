@@ -5,7 +5,8 @@ module ApplicationCable
     def connect
       token = request.params[:token]
       self.current_user = AuthenticationService.user(token)
-      Rails.logger.debug self.current_user
+
+      Rails.logger.debug self.current_user.as_json
     end
 
     def disconnect

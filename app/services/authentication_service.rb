@@ -16,11 +16,10 @@ class AuthenticationService
 
     user = User.find_by_vkontakte_id user_id
 
-    login_user(user,user_id,token)
+    login_mobile_user(user,user_id,token)
   end
 
   def self.login_user(user,user_id,access_token)
-
     if user
       user.update_attributes access_token: access_token
     else
@@ -32,9 +31,26 @@ class AuthenticationService
 
   end
 
+  def self.login_mobile_user(user,user_id,access_token)
+    if user
+      user.update_attributes mobile_access_token: access_token
+    else
+      user = User.create vkontakte_id: user_id, mobile_access_token: access_token
+    end
+
+    payload = { iss: user.id }
+    JWT.encode payload, Rails.application.secrets.secret_key_base, 'HS256'
+
+  end
+
   def self.user(token)
     return nil unless token
     payload = JWT.decode(token, Rails.application.secrets.secret_key_base, { :algorithm => 'HS256' }).first
+
+    Rails.logger.debug "====================="
+    Rails.logger.debug payload['iss']
+    Rails.logger.debug token
+    Rails.logger.debug "====================="
     User.find(payload['iss'])
   end
 end

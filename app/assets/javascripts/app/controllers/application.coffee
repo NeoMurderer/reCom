@@ -1,24 +1,26 @@
 angular.module 'recom'
 .controller 'ApplicationController', [
-  '$scope', '$auth', '$state','$cable','angularPlayer'
-  ($scope, $auth, $state,$cable,angularPlayer) ->
+  '$scope', '$auth', '$state','$cable','angularPlayer',"$rootScope"
+  ($scope, $auth, $state,$cable,angularPlayer,$rootScope) ->
     $scope.signOut = ->
       $auth.logout()
       $state.go 'login'
-    cable = $cable('ws://0.0.0.0:3000/cable?token='+$auth.getToken());
-    channel = cable.subscribe('EventsChannel', { received: (response)->
-      if !response.event
+    $rootScope.cable = $cable('ws://0.0.0.0:3000/cable?token='+$auth.getToken());
+    $rootScope.channel = $rootScope.cable.subscribe('EventsChannel', { received: (response)->
+      if !response
         return
-      $scope.events[response.event.user_action](response.data)
+      if response.platform == "mobile"
+        event = response.event.replace("com.snazzis.recom:id/","")
+        $scope.events[event](response.data)
     });
     $scope.events = {
-      play: () ->
+      playerPlay: () ->
         angularPlayer.play()
-      pause: () ->
+      playerPause: () ->
         angularPlayer.pause()
-      nextTrack: () ->
+      playerNext: () ->
         angularPlayer.nextTrack()
-      prevTrack: () ->
+      playerPrev: () ->
         angularPlayer.prevTrack()
       mute: () ->
         angularPlayer.mute()
@@ -27,5 +29,4 @@ angular.module 'recom'
 
 
     }
-    console.log cable.connection.isOpen()
 ]

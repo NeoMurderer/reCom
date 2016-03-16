@@ -21,7 +21,7 @@
   <tbody>
     <tr ng-repeat="song in songs" ng-class="song == current_song ? 'info' : ''">
       <td>
-        <button class="btn btn-primary btn-xs" type="button" play-all="songs">
+        <button class="btn btn-primary btn-xs" type="button" play-all="songs"  data-play="true" ng-click="playTrack(song)">
           <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
         </button>
       </td>
